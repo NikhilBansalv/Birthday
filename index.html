@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Card with Balloons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card {
+      width: 95%;
+      max-width: 520px;
+      padding: 35px;
+      background: white;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ff6b81;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    /* Pink Ribbon */
+    .ribbon {
+      display: inline-block;
+      width: 120px;
+      height: 80px;
+      background: #ff6b81;
+      position: relative;
+      border-radius: 10px 10px 30px 30px;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .ribbon::before, .ribbon::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: #ff6b81;
+      border-radius: 50%;
+      top: -30px;
+    }
+
+    .ribbon::before {
+      left: -30px;
+    }
+
+    .ribbon::after {
+      right: -30px;
+    }
+
+    /* Animation for Ribbon */
+    @keyframes ribbonFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .ribbon {
+      animation: ribbonFloat 2s infinite ease-in-out;
+    }
+
+    .photo-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 20px;
+    }
+
+    .photo {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px; /* Cuboidal Shape */
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+
+    .footer {
+      color: #ff6b81;
+      font-size: 1rem;
+    }
+
+    /* Balloon Animation */
+    .balloon-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .balloon {
+      position: absolute;
+      width: 60px; /* Balloon size */
+      height: 100px;
+      animation: float 8s linear infinite;
+    }
+
+    .balloon img {
+      width: 100%;
+      height: auto;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-150%);
+        opacity: 0;
+      }
+    }
+
+    /* Balloon Positions */
+    .balloon:nth-child(1) {
+      left: 5%;
+      animation-delay: 0s;
+    }
+    .balloon:nth-child(2) {
+      left: 15%;
+      animation-delay: 2s;
+    }
+    .balloon:nth-child(3) {
+      left: 85%;
+      animation-delay: 1s;
+    }
+    .balloon:nth-child(4) {
+      left: 95%;
+      animation-delay: 3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="balloon-container">
+    <div class="balloon"><img src="balloon.gif" alt="Balloon"></div>
+    <div class="balloon"><img src="balloon.gif" alt="Balloon"></div>
+    <div class="balloon"><img src="balloon.gif" alt="Balloon"></div>
+    <div class="balloon"><img src="balloon.gif" alt="Balloon"></div>
+  </div>
+  <div class="card">
+    <h1>Happy Birthday Aditi!</h1>
+    <div class="ribbon"></div>
+    <p>Wishing you a day filled with love, joy, and all your favorite things! May this year bring you endless happiness and success.</p>
+    <div class="photo-container">
+      <img class="photo" src="aditi.jpg" alt="Friend Photo">
+      <img class="photo" src="card.jpg" alt="Friend Photo">
+    </div>
+    <div class="footer">Enjoy you day!</div>
+  </div>
+</body>
+</html>

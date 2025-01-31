@@ -1,0 +1,176 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3e5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Scene */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Balloons */
+.balloon {
+  position: absolute;
+  width: 120px;
+  height: 160px;
+  background: radial-gradient(circle, #ff8a80, #ff5252);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.left-balloon {
+  bottom: -150px;
+  left: 15%;
+  animation-delay: 0.5s;
+}
+
+.right-balloon {
+  bottom: -150px;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-300px) scale(1.1);
+  }
+  100% {
+    transform: translateY(-700px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* Envelope Container */
+.envelope-container {
+  position: relative;
+  width: 500px;
+  height: 400px;
+}
+
+/* Envelope Body */
+.envelope {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 250px;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e1bee7;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  transform-origin: top center;
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: red;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 80%, 18% 100%, 0% 38%);
+  cursor: pointer;
+}
+
+.body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #d1c4e9;
+  border-radius: 0 0 15px 15px;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Photo & Text */
+.photo-left {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.photo-left img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.text-right {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  color: #8e24aa;
+  text-align: right;
+}
+
+.text-right h1 {
+  font-size: 32px;
+}
+
+/* Birthday Card */
+.hidden {
+  display: none;
+}
+
+#card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: slideIn 0.6s ease forwards;
+}
+
+.card-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.wish {
+  font-size: 18px;
+  color: #7b1fa2;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
